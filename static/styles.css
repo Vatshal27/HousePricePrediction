@@ -17,7 +17,7 @@ body {
 
 /* Container Styling */
 .container {
-    background: linear-gradient(135deg, #e0e7ff 60%, #c7d2fe 100%);
+    background: linear-gradient(120deg, #232946 80%, #3e497a 100%);
     border-radius: 16px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     width: 100%;
@@ -30,10 +30,12 @@ body {
 /* Title */
 h2 {
     text-align: center;
-    color: #6b73ff;
+    color: #ffffff;
     font-size: 24px;
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: 24px;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 
@@ -56,12 +58,13 @@ h2 {
 
 /* Label Styling */
 .form-group label {
-    font-size: 12px;
-    font-weight: 600;
-    color: #374151;
+    font-size: 13px;
+    font-weight: 700;
+    color: #e2e8f0;
     margin-bottom: 4px;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.7px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
 }
 
 /* Input & Select Styling */
@@ -123,7 +126,7 @@ button.full-width {
 /* ✅ Responsive Design */
 @media (max-width: 1024px) {
     .container {
-        background: linear-gradient(135deg, #e0e7ff 60%, #c7d2fe 100%);
+        background: linear-gradient(120deg, #232946 80%, #3e497a 100%);
         width: 98vw;
         max-width: 370px;
         margin: 20px auto;
@@ -147,12 +150,11 @@ button.full-width {
     }
 
     .form-group label {
-        margin-bottom: 4px;
+        color: #e2e8f0;
         font-size: 1rem;
-        font-weight: 600;
-        color: #22223b;
-        letter-spacing: 0.5px;
-        text-shadow: 0 1px 2px #fff, 0 0 1px #6b73ff;
+        font-weight: 700;
+        letter-spacing: 0.7px;
+        text-shadow: 0 1px 2px rgba(0,0,0,0.2);
     }
 
     .form-group input,
@@ -172,10 +174,10 @@ button.full-width {
     }
 
     h2 {
-        font-size: 1.1rem;
-        margin-bottom: 12px;
-        color: #22223b;
-        text-shadow: 0 1px 2px #fff, 0 0 1px #6b73ff;
+        color: #ffffff;
+        font-size: 1.2rem;
+        font-weight: 700;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.2);
     }
 
     button,
