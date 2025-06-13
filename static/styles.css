@@ -1,0 +1,142 @@
+/* Base styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #d4e1ff, #f5f7ff);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Container */
+.container {
+    background-color: #ffffff;
+    padding: 35px 30px;
+    border-radius: 18px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    max-width: 720px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 20px;
+    position: relative;
+}
+
+/* Heading */
+h2 {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-size: 26px;
+}
+
+/* Form group */
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Labels and inputs */
+label {
+    margin-bottom: 6px;
+    color: #34495e;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+input[type="text"],
+select {
+    padding: 10px 12px;
+    border: 1px solid #bdc3c7;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: border-color 0.3s ease;
+    background-color: #fdfdfd;
+}
+
+input[type="text"]:focus,
+select:focus {
+    border-color: #4e7cff;
+    outline: none;
+}
+
+/* Button */
+button {
+    grid-column: 1 / -1;
+    padding: 12px;
+    background-color: #4e7cff;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.25s ease-in-out;
+}
+
+button:hover {
+    background-color: #3659e3;
+}
+
+/* Prediction */
+.prediction {
+    grid-column: 1 / -1;
+    margin-top: 15px;
+    text-align: center;
+    color: #1e7e34;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Alerts */
+.error {
+    grid-column: 1 / -1;
+    color: #e74c3c;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.success {
+    grid-column: 1 / -1;
+    color: #2ecc71;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 800px) {
+    .container {
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        padding: 30px 20px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    button {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 500px) {
+    .container {
+        grid-template-columns: 1fr;
+        padding: 25px 15px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    input[type="text"],
+    select,
+    button {
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Boston Housing Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>🏠 Boston Housing Price Prediction</h2>
+        <form action="/predict" method="post" class="grid-form">
+            {% for field in ['CRIM', 'ZN', 'INDUS', 'CHAS', 'NOX', 'RM', 'AGE', 'DIS', 'RAD', 'TAX', 'PTRATIO', 'B', 'LSTAT'] %}
+                <div class="form-group">
+                    <label for="{{ field }}">{{ field }}</label>
+                    <input type="text" id="{{ field }}" name="{{ field }}" value="{{ form_values.get(field, '') }}">
+                </div>
+            {% endfor %}
+
+            <div class="form-group full-width">
+                <label for="model_choice">Select Model:</label>
+                <select name="model_choice" id="model_choice">
+                    <option value="linear" {% if form_values.get('model_choice') == 'linear' %}selected{% endif %}>Linear Regression</option>
+                    <option value="xgb" {% if form_values.get('model_choice') == 'xgb' %}selected{% endif %}>XGBoost</option>
+                </select>
+            </div>
+
+            <button type="submit" class="full-width">🔮 Predict</button>
+        </form>
+
+        {% if prediction_text %}
+            <div class="prediction">
+                <h3>{{ prediction_text }}</h3>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
