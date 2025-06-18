@@ -2,7 +2,6 @@ from flask import Flask, render_template, request
 import pickle
 import numpy as np
 
-
 app = Flask(__name__)
 
 # Load both models
@@ -25,6 +24,7 @@ def predict():
         chas_raw = form.get('CHAS', '').strip()
         chas_value = float(chas_raw) if chas_raw else 0.0
 
+        # Prepare features
         features = [
             float(form['CRIM']),
             float(form['ZN']),
@@ -52,7 +52,7 @@ def predict():
             model_name = "Linear Regression"
 
         output = round(prediction, 2)
-        return render_template('index.html', prediction_text=f'{model_name} Prediction: ${output:.2f}', form_values=form)
+        return render_template('index.html', prediction_text=f'{model_name} Prediction: $ {output:.2f}', form_values=form)
 
     except Exception as e:
         return render_template('index.html', prediction_text="Invalid input! Please ensure all fields are filled correctly.", form_values=request.form)
